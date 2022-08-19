@@ -9,7 +9,7 @@ function VideoInfo({selectedVideo }) {
         <InfoPanel 
             selectedVideo = {selectedVideo}
         />
-        <p>{selectedVideo.description}</p>
+        <p className='info__description'>{selectedVideo.description}</p>
     </div>
     
   )

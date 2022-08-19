@@ -1,0 +1,16 @@
+@use "../../styles/partials/sizes" as *;
+
+.comments {
+    padding: 1rem;
+    padding-top: 0;
+
+    @include tablet {
+        padding: 0 2.25rem 1rem;
+
+    }
+
+    &__num-of-comments {
+        font-weight: 700;
+        margin-top: 0;
+    }
+}

@@ -4,10 +4,11 @@ import "./CommentsSection.scss";
 
 function CommentsSection() {
   return (
-    <>
+    <div className='comments'>
+        <p className='comments__num-of-comments'>3 Comments</p>
         <AddComment />
-    </>
+    </div>
   )
 }
 
-export default CommentsSection
+export default CommentsSection;
