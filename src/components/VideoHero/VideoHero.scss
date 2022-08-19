@@ -1,0 +1,23 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/sizes" as *;
+@use "../../styles/partials/mixins" as *;
+
+.hero {
+    background-color: $video-player-comp;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+    &__video {
+        width:100%;
+
+        @include tablet {
+            padding: 0 2.25rem;
+            
+        }
+        @include desktop-center;
+        @include desktop {
+            padding: 0 4rem;
+        }
+    }
+}
