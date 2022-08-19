@@ -1,0 +1,50 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/sizes" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+
+.info-panel {
+    border-top: 1px solid $divider-and-outline;
+    border-bottom: 1px solid $divider-and-outline;
+    margin: 1rem 0;
+    display: flex;
+
+    @include tablet {
+        margin: 0;
+        border-top: none;
+        justify-content: space-between;
+    }
+    
+    &__left, &__right {
+        width: 50%;
+
+        @include tablet {
+            width: fit-content;
+            display: flex;
+        }
+    }
+
+    &__channel {
+        font-weight: 700;
+
+        @include tablet {
+            margin-right: 2rem;
+        }
+    }
+
+    &__views, &__date, &__likes {
+        color: $secondary-text;
+    }
+
+    &__likes {
+
+        @include tablet {
+            margin-left: 2rem;
+        }
+    }
+
+    &__icon {
+        margin-right: 0.5rem;
+    }
+
+}

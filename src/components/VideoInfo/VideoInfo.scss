@@ -6,10 +6,19 @@
 .info {
     padding: 1rem;
 
+    @include tablet {
+        padding: 1.5rem 2.25rem;
+    }
+
     &__title {
         margin: 0;
         font-size: 1.5rem;
         font-weight: 700;
         line-height: 2rem;
+
+        @include tablet {
+            font-size: 2.0625rem;
+            line-height: 2.75rem;
+        }
     }
 }

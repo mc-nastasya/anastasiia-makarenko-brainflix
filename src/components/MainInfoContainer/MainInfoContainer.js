@@ -22,7 +22,8 @@ function MainInfoContainer() {
                 selectedVideo={selectedVideo}
             />
             <VideoInfo 
-                title={selectedVideo.title}
+                selectedVideo={selectedVideo}
+
             />
         </>
     )
