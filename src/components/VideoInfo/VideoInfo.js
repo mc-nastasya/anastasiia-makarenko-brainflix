@@ -9,6 +9,7 @@ function VideoInfo({selectedVideo }) {
         <InfoPanel 
             selectedVideo = {selectedVideo}
         />
+        <p>{selectedVideo.description}</p>
     </div>
     
   )
