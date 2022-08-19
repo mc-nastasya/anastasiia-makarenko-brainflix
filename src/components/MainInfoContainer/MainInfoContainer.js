@@ -2,6 +2,7 @@ import VideoHero from '../VideoHero/VideoHero';
 import React, { useState } from 'react';
 import videoData from "../../data/video-details.json";
 import VideoInfo from '../VideoInfo/VideoInfo';
+import CommentsSection from '../CommentsSection/CommentsSection';
 
 function MainInfoContainer() {
     const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
@@ -25,6 +26,7 @@ function MainInfoContainer() {
                 selectedVideo={selectedVideo}
 
             />
+            <CommentsSection />
         </>
     )
 }
