@@ -16,6 +16,7 @@ function MainInfoContainer() {
         })
         setSelectedVideo(newSelectedVideo);
     }
+    
 
     return (
         <>
@@ -26,7 +27,7 @@ function MainInfoContainer() {
                 selectedVideo={selectedVideo}
 
             />
-            <CommentsSection />
+            <CommentsSection selectedVideo={selectedVideo}/>
         </>
     )
 }
