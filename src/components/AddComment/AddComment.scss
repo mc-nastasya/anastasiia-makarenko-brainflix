@@ -6,8 +6,12 @@
     &__add {
         display: flex;
         justify-content: space-between;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
         border-bottom: 1px solid $divider-and-outline;
+
+        @include tablet {
+            padding-bottom: 2rem;
+        }
 
     }
 
