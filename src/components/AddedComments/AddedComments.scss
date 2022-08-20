@@ -1,0 +1,56 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/sizes" as *;
+@use "../../styles/partials/mixins" as *;
+
+.card {
+    border-bottom: 1px solid $divider-and-outline;
+    display: flex;
+    padding: 1rem 0 ;
+
+    &__left {
+        width: 20%;
+
+        @include tablet {
+            width: 10%;
+        }
+    }
+
+    &__image {
+        background-color: $divider-and-outline;
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+
+        @include tablet {
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+    }
+
+    &__right {
+        width: 80%;
+
+        @include tablet {
+            width: 90%;
+        }
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__name, &__date {
+        margin: 0;
+    }
+
+    &__name {
+        font-weight: 700;
+    }
+
+    &__date {
+        color: $secondary-text;
+    }
+
+
+}
