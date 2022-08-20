@@ -1,12 +1,14 @@
 import VideoHero from '../VideoHero/VideoHero';
 import React, { useState } from 'react';
 import videoData from "../../data/video-details.json";
+import videos from "../../data/videos.json";
 import VideoInfo from '../VideoInfo/VideoInfo';
 import CommentsSection from '../CommentsSection/CommentsSection';
+import VideoList from '../VideoList/VideoList';
 
 function MainInfoContainer() {
     const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
-    const nonSelectedVideos = videoData.filter((video)=>{
+    const nonSelectedVideos = videos.filter((video)=>{
         return video.id !== selectedVideo.id
     })
 
@@ -25,9 +27,14 @@ function MainInfoContainer() {
             />
             <VideoInfo 
                 selectedVideo={selectedVideo}
-
             />
-            <CommentsSection selectedVideo={selectedVideo}/>
+            <CommentsSection 
+                selectedVideo={selectedVideo}
+            />
+            <VideoList 
+                nonSelectedVideos={nonSelectedVideos}
+                handleClick={handleClick}
+            />
         </>
     )
 }

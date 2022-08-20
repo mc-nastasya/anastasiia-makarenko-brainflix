@@ -4,6 +4,7 @@ import MainInfoContainer from './components/MainInfoContainer/MainInfoContainer'
 
 
 function App() {
+  
   return (
     <>
       <Header />

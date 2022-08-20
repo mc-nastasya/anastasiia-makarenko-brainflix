@@ -1,0 +1,12 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/sizes" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video-list {
+
+    &__title{
+        color: $secondary-text;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}

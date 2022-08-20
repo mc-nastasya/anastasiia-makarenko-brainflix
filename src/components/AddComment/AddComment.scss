@@ -54,10 +54,10 @@
     }
 
     &__label {
-        display: block;
         color: $secondary-text;
         text-transform: uppercase;
         font-size: 0.75rem;
+        font-weight: 700;
         margin-bottom: 0.25rem;
         width: 100%;
     }
