@@ -7,10 +7,15 @@
     padding: 1rem;
     padding-top: 0;
 
+    @include tablet {
+        padding: 0 2.25rem;
+    }
+
     &__title{
         color: $secondary-text;
         text-transform: uppercase;
         font-weight: 700;
+        margin-top: 1.5rem;
     }
 }
 
@@ -31,6 +36,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        width: 15rem;
     }
 
     &__title, &__channel {
@@ -39,5 +45,10 @@
 
     &__title {
         font-weight: 700;
+    }
+
+    &__channel {
+        margin-bottom: 0.2rem;
+
     }
 }
