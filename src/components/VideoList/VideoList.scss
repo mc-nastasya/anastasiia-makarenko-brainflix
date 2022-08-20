@@ -3,12 +3,18 @@
 @use "../../styles/partials/mixins" as *;
 
 .video-list {
-
-    padding: 1rem;
-    padding-top: 0;
+    border-top: 1px solid $divider-and-outline;
+    margin: 1rem;
+    margin-top: 0;
 
     @include tablet {
-        padding: 0 2.25rem;
+        margin: 0 2.25rem;
+    }
+
+    @include desktop {
+        padding-right: 0;
+        border-left: 1px solid $divider-and-outline;
+        border: none;
     }
 
     &__title{

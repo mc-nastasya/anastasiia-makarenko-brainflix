@@ -5,6 +5,7 @@ import videos from "../../data/videos.json";
 import VideoInfo from '../VideoInfo/VideoInfo';
 import CommentsSection from '../CommentsSection/CommentsSection';
 import VideoList from '../VideoList/VideoList';
+import "./MainInfoContainer.scss";
 
 function MainInfoContainer() {
     const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
@@ -21,21 +22,25 @@ function MainInfoContainer() {
     
 
     return (
-        <>
+        <main>
             <VideoHero 
                 selectedVideo={selectedVideo}
             />
-            <VideoInfo 
-                selectedVideo={selectedVideo}
-            />
-            <CommentsSection 
-                selectedVideo={selectedVideo}
-            />
-            <VideoList 
-                nonSelectedVideos={nonSelectedVideos}
-                handleClick={handleClick}
-            />
-        </>
+            <div className="content">
+                <div className="content__left">
+                    <VideoInfo 
+                        selectedVideo={selectedVideo}
+                    />
+                    <CommentsSection 
+                        selectedVideo={selectedVideo}
+                    />
+                </div>
+                <VideoList 
+                    nonSelectedVideos={nonSelectedVideos}
+                    handleClick={handleClick}
+                />
+            </div>
+        </main>
     )
 }
 

@@ -1,0 +1,10 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/sizes" as *;
+@use "../../styles/partials/mixins" as *;
+
+.content{ 
+    @include desktop-center;
+    @include desktop {
+        display: flex;
+    }
+}

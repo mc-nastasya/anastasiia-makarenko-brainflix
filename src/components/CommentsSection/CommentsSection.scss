@@ -8,6 +8,10 @@
 
     }
 
+    @include desktop {
+        padding: 0;
+    }
+
     &__num-of-comments {
         font-weight: 700;
         margin-top: 0;

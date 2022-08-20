@@ -10,6 +10,10 @@
         padding: 1.5rem 2.25rem;
     }
 
+    @include desktop {
+        padding: 1.5rem 0;
+    }
+
     &__title {
         margin: 0;
         font-size: 1.5rem;
@@ -23,5 +27,9 @@
     }
     &__description {
         margin-bottom: 0;
+
+        @include desktop {
+            margin-right: 2rem;
+        }
     }
 }
