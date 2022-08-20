@@ -1,8 +1,7 @@
 @use "../../styles/partials/sizes" as *;
 
 .comments {
-    padding: 1rem;
-    padding-top: 0;
+    padding: 0 1rem;
 
     @include tablet {
         padding: 0 2.25rem 1.5rem;

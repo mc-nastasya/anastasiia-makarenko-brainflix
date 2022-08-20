@@ -4,9 +4,40 @@
 
 .video-list {
 
+    padding: 1rem;
+    padding-top: 0;
+
     &__title{
         color: $secondary-text;
         text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+
+.item {
+    display: flex;
+    padding: 0.5rem 0;
+
+    &__image {
+        width: 7rem;
+        height: 4.5rem;
+        object-fit: cover;
+        border-radius: 4px;
+        background-color: $divider-and-outline;
+        margin-right: 1rem;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__title, &__channel {
+        margin: 0;
+    }
+
+    &__title {
         font-weight: 700;
     }
 }
