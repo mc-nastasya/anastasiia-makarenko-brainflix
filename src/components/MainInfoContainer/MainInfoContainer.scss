@@ -7,4 +7,20 @@
     @include desktop {
         display: flex;
     }
+
+    &__right{
+
+        @include desktop{
+            width: 35%;
+        }
+        
+    }
+
+    &__left {
+
+        @include desktop {
+          width: 65%;  
+        }
+        
+    }
 }

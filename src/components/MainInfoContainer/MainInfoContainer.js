@@ -15,7 +15,8 @@ function MainInfoContainer() {
 
     const handleClick = (videoId)=>{
         const newSelectedVideo = videoData.find((video)=>{
-            return videoId === video.id
+            window.scrollTo( 0, 0);
+            return videoId === video.id;
         })
         setSelectedVideo(newSelectedVideo);
     }
@@ -35,10 +36,12 @@ function MainInfoContainer() {
                         selectedVideo={selectedVideo}
                     />
                 </div>
-                <VideoList 
-                    nonSelectedVideos={nonSelectedVideos}
-                    handleClick={handleClick}
-                />
+                <div className='content__right'>
+                    <VideoList 
+                        nonSelectedVideos={nonSelectedVideos}
+                        handleClick={handleClick}
+                    />
+                </div>
             </div>
         </main>
     )

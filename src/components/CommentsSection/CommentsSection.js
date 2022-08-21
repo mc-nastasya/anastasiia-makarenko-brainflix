@@ -6,7 +6,7 @@ import "./CommentsSection.scss";
 function CommentsSection({selectedVideo}) {
   return (
     <div className='comments'>
-        <p className='comments__num-of-comments'>3 Comments</p>
+        <p className='comments__num-of-comments'>{`${selectedVideo.comments.length} Comments`}</p>
         <AddComment />
         <AddedComments selectedVideo={selectedVideo}/>
     </div>
