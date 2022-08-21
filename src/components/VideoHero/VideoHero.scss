@@ -15,12 +15,13 @@
 
         @include tablet {
             padding: 0 2.25rem;
+            height: 45vw;
             
         }
         @include desktop-center;
         @include desktop {
             padding: 0 4rem;
-
+            height: 40vw;
         }
     }
 }
