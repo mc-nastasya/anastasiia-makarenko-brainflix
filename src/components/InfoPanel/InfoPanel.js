@@ -3,15 +3,8 @@ import "./InfoPanel.scss";
 import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
 
-function InfoPanel({selectedVideo}) {
+function InfoPanel({selectedVideo, formatDate}) {
 
-    function formatDate(date) {
-        const formattedDate = new Date(date);
-        const year = formattedDate.getFullYear();
-        const month = ( "0" + (formattedDate.getMonth() + 1)).slice(-2);
-        const day = ( "0" + formattedDate.getDate()).slice(-2);
-        return `${month}/${day}/${year}`;
-    }
 
   return (
         <div className='info-panel'>
@@ -25,11 +18,11 @@ function InfoPanel({selectedVideo}) {
             </div>
             <div className='info-panel__right'>
                 <p className='info-panel__card info-panel__views'>
-                    <img className='info-panel__icon' src={viewsIcon}/>
+                    <img className='info-panel__icon' alt="" src={viewsIcon}/>
                     {selectedVideo.views}
                 </p>
                 <p className='info-panel__card info-panel__likes'>
-                    <img className='info-panel__icon' src={likesIcon}/>
+                    <img className='info-panel__icon' alt="" src={likesIcon}/>
                     {selectedVideo.likes}
                 </p>
             </div>
