@@ -14,7 +14,6 @@ function App() {
         <Route path="/" element={<MainInfoContainer />}/>
         <Route path="/upload" element ={<PublishVideo />}/>
       </Routes>
-      
     </BrowserRouter>
   );
 }
