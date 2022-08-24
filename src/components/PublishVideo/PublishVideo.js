@@ -1,5 +1,6 @@
 import "./PublishVideo.scss";
 import VideoThumbnail from "../../assets/Images/Upload-video-preview.jpg";
+import ButtonComponent from "../ButtonComponent/ButtonComponent";
 
 function PublishVideo() {
   return (
@@ -18,11 +19,10 @@ function PublishVideo() {
                     <textarea id="video-description" className="form__input-description" name="video-description" placeholder="Add a description to your video"></textarea>
                 </div>
             </div>
-            <div className="form__bottom">
-                <button className="form__publish-button button" type="submit" value="submit">Publish</button>
-                <button className="form__cancel-button button" type="cancel" >Cancel</button>
-            </div>
-
+            {<div className="form__bottom">
+                <ButtonComponent addClass="form__publish-button" buttonContent="Publish"/>
+                <ButtonComponent addClass="form__cancel-button" buttonContent="Cancel"/>
+            </div>}
         </form>
     </div>
   )

@@ -68,4 +68,13 @@
         height: 6rem;
     }
 
+    &__publish-button {
+        background: url(../../assets/icons/publish.svg) no-repeat scroll 5px 8px, $primary-cta;
+    }
+
+    &__cancel-button {
+        background-color: $background;
+        color: $primary-cta;
+        margin: 1.5rem 0 0.5rem;
+    }
 }
