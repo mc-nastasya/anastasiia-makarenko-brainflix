@@ -1,8 +1,16 @@
-import "./ButtonComponent.scss"
+import "./ButtonComponent.scss";
 
-function ButtonComponent() {
-  return (
-    <div>ButtonComponent</div>
+function ButtonComponent({addClass, buttonContent}) {
+
+
+    return (
+    
+    <button 
+    className={`button ${addClass}`} 
+    type="submit" 
+    value="submit">
+        {buttonContent}
+    </button>
   )
 }
-export default ButtonComponent
+export default ButtonComponent;

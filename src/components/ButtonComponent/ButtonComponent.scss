@@ -1,2 +1,26 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/sizes" as *;
+
+
+.button {
+    width: 100%;
+    height: 2.5rem;
+    text-transform: uppercase;
+    color: $form-background;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.8rem 0;
+
+    @include tablet {
+        width: 10rem;
+    }
+
+}
+
+.nav__button {
+    background: url(../../assets/icons/upload.svg) no-repeat scroll 5px 8px, $primary-cta;
+
+    @include tablet {
+        margin-left: 1.5rem;
+    }
+}

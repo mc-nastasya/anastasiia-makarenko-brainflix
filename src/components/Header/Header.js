@@ -1,5 +1,6 @@
 import "./Header.scss";
 import BrainFlixLogo from "../../assets/icons/BrainFlix-logo.svg" 
+import ButtonComponent from "../ButtonComponent/ButtonComponent";
 
 function Header() {
     return (
@@ -10,7 +11,7 @@ function Header() {
                     <input className="nav__input" typeof="text" name="search" placeholder="Search"/>
                     <div className="nav__image-mobile"></div>
                 </div>
-                <button className="nav__button">Upload</button>
+                {<ButtonComponent addClass = "nav__button" buttonContent="Upload"/>}
                 <div className="nav__image-notmobile"></div>
             </nav>
         </header>
