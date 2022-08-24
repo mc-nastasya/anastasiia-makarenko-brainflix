@@ -80,6 +80,14 @@
         }
     }
 
+    &__button {
+        background: url(../../assets/icons/upload.svg) no-repeat scroll 5px 8px, $primary-cta;
+    
+        @include tablet {
+            margin-left: 1.5rem;
+        }
+    }
+
     &__image-mobile {
         background-image: url(../../assets/Images/Mohan-muruge.jpg);
         background-size: cover;

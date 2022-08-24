@@ -1,4 +1,5 @@
 import React from 'react';
+import ButtonComponent from '../ButtonComponent/ButtonComponent';
 import "./AddComment.scss";
 
 function AddComment() {
@@ -17,12 +18,7 @@ function AddComment() {
                 placeholder="Add a new comment">
             </textarea>
             </div>
-            <button 
-                className="comments__button" 
-                type="submit" 
-                value="submit">
-                    Comment
-            </button>
+            {<ButtonComponent addClass="comments__button" buttonContent="Comment"/>}
         </form>
     </div>
   )
