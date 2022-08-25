@@ -2,8 +2,9 @@ import React from 'react';
 import "./InfoPanel.scss";
 import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
+import {formatDate} from "../../utilities/utilities";
 
-function InfoPanel({selectedVideo, formatDate}) {
+function InfoPanel({selectedVideo}) {
 
 
   return (

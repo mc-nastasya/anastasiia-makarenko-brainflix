@@ -1,6 +1,8 @@
-import "./AddedComments.scss"
+import "./AddedComments.scss";
+import {formatDate} from "../../utilities/utilities";
 
-function AddedComments({selectedVideo, formatDate}) {
+
+function AddedComments({selectedVideo}) {
     const comments = selectedVideo.comments;
 
     
