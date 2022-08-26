@@ -1,25 +1,39 @@
 import VideoHero from '../VideoHero/VideoHero';
-import React, { useState } from 'react';
-import videoData from "../../data/video-details.json";
-import videos from "../../data/videos.json";
+import React, { useEffect, useState } from 'react';
 import VideoInfo from '../VideoInfo/VideoInfo';
 import CommentsSection from '../CommentsSection/CommentsSection';
 import VideoList from '../VideoList/VideoList';
 import "./MainInfoContainer.scss";
+import {getVideos} from "../../utilities/utilities";
+import { getSingleVideo } from '../../utilities/utilities';
+import { useParams } from 'react-router-dom';
 
 function MainInfoContainer() {
-    const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
-    const nonSelectedVideos = videos.filter((video)=>{
-        return video.id !== selectedVideo.id
-    })
+    const [selectedVideo, setSelectedVideo] = useState(null);
+    const [videos, setVideos]  = useState([]);
 
-    const handleClick = (videoId)=>{
-        const newSelectedVideo = videoData.find((video)=>{
-            window.scrollTo( 0, 0);
-            return videoId === video.id;
+    const {videoId} = useParams();
+
+    useEffect(()=>{
+        getVideos().then((response)=>{
+            setVideos(response.data);
+            const selectedVideoId = (videoId || response.data[0].id);
+            return getSingleVideo(selectedVideoId);
+        }).then((response)=>{
+            setSelectedVideo(response.data)
+        }).catch((error)=>{
+            console.log("error", error)
         })
-        setSelectedVideo(newSelectedVideo);
+    }, [videoId]);
+
+
+    if(!selectedVideo) {
+        return <p>...Loadiing</p>
     }
+
+    const nonSelectedVideos = videos.filter((video)=>{
+        return video.id !== selectedVideo.id;
+    })
     
     return (
         <main>
@@ -38,7 +52,6 @@ function MainInfoContainer() {
                 <div className='content__right'>
                     <VideoList 
                         nonSelectedVideos={nonSelectedVideos}
-                        handleClick={handleClick}
                     />
                 </div>
             </div>
