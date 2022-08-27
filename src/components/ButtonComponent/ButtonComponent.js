@@ -2,13 +2,13 @@ import "./ButtonComponent.scss";
 
 function ButtonComponent({addClass, buttonContent}) {
 
-
     return (
     
     <button 
     className={`button ${addClass}`} 
     type="submit" 
-    value="submit">
+    value="submit"
+    >
         {buttonContent}
     </button>
   )

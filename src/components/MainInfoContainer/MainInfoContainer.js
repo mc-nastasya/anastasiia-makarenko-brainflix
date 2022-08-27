@@ -6,8 +6,10 @@ import VideoList from '../VideoList/VideoList';
 import "./MainInfoContainer.scss";
 import {getVideos, getSingleVideo, scrollToTop} from "../../utilities/utilities";
 import { useParams } from 'react-router-dom';
+import FormSubmitted from '../FormSubmitted/FormSubmitted';
 
-function MainInfoContainer() {
+
+function MainInfoContainer({isSubmitted, setIsSubmitted}) {
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [videos, setVideos]  = useState([]);
 
@@ -37,6 +39,7 @@ function MainInfoContainer() {
     
     return (
         <main>
+            {isSubmitted ? <FormSubmitted setIsSubmitted={setIsSubmitted} /> : null}
             <VideoHero 
                 selectedVideo={selectedVideo}
             />

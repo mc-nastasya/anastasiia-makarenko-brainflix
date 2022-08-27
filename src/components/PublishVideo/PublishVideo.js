@@ -1,13 +1,24 @@
 import "./PublishVideo.scss";
 import VideoThumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function PublishVideo() {
+
+function PublishVideo({isSubmitted, setIsSubmitted}) {
+
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) =>{
+        event.preventDefault();
+        setIsSubmitted(true);
+        navigate('/');
+    }
+
+
   return (
     <div className="publish-video">
         <h1 className="publish-video__title">Upload Video</h1>
-        <form className="publish-video__form form">
+        <form onSubmit={handleSubmit} className="publish-video__form form">
             <div className="form__top">
                 <div className="form__image-container">
                     <p className="form__image-title">Video thumbnail</p>
@@ -21,7 +32,7 @@ function PublishVideo() {
                 </div>
             </div>
             {<div className="form__bottom">
-                <Link to="/"><ButtonComponent addClass="form__publish-button" buttonContent="Publish"/></Link>
+                <ButtonComponent addClass="form__publish-button" buttonContent="Publish"/>
                 <Link to="/"><ButtonComponent addClass="form__cancel-button" buttonContent="Cancel"/></Link>
             </div>}
         </form>
