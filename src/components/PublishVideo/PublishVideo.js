@@ -1,6 +1,7 @@
 import "./PublishVideo.scss";
 import VideoThumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
+import { Link } from "react-router-dom";
 
 function PublishVideo() {
   return (
@@ -20,8 +21,8 @@ function PublishVideo() {
                 </div>
             </div>
             {<div className="form__bottom">
-                <ButtonComponent addClass="form__publish-button" buttonContent="Publish"/>
-                <ButtonComponent addClass="form__cancel-button" buttonContent="Cancel"/>
+                <Link to="/"><ButtonComponent addClass="form__publish-button" buttonContent="Publish"/></Link>
+                <Link to="/"><ButtonComponent addClass="form__cancel-button" buttonContent="Cancel"/></Link>
             </div>}
         </form>
     </div>
