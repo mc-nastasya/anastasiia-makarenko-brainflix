@@ -1,11 +1,13 @@
 import "./Header.scss";
 import BrainFlixLogo from "../../assets/icons/BrainFlix-logo.svg" 
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
         <header className="header">
-            <img className="header__logo" src={BrainFlixLogo} alt="BrainFlix Logo"/>
+            <Link to="/"><img className="header__logo" src={BrainFlixLogo} alt="BrainFlix Logo"/></Link>
+            
             <nav className="nav">
                 <div className="nav__search-bar">
                     <input className="nav__input" typeof="text" name="search" placeholder="Search"/>
