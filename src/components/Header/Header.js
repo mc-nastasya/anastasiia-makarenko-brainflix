@@ -13,7 +13,7 @@ function Header() {
                     <input className="nav__input" typeof="text" name="search" placeholder="Search"/>
                     <div className="nav__image-mobile"></div>
                 </div>
-                {<ButtonComponent addClass = "nav__button" buttonContent="Upload"/>}
+                <Link to="/upload"><ButtonComponent addClass = "nav__button" buttonContent="Upload"/></Link>
                 <div className="nav__image-notmobile"></div>
             </nav>
         </header>
