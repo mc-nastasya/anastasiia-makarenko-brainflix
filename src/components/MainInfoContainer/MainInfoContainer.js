@@ -14,13 +14,13 @@ function MainInfoContainer() {
     const {videoId} = useParams();
 
     useEffect(()=>{
-        scrollToTop();
         getVideos().then((response)=>{
             setVideos(response.data);
             const selectedVideoId = (videoId || response.data[0].id);
             return getSingleVideo(selectedVideoId);
         }).then((response)=>{
-            setSelectedVideo(response.data)
+            setSelectedVideo(response.data);
+            scrollToTop();
         }).catch((error)=>{
             console.log("error", error)
         })
