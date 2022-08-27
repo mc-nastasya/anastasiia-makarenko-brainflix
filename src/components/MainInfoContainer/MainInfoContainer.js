@@ -4,8 +4,7 @@ import VideoInfo from '../VideoInfo/VideoInfo';
 import CommentsSection from '../CommentsSection/CommentsSection';
 import VideoList from '../VideoList/VideoList';
 import "./MainInfoContainer.scss";
-import {getVideos} from "../../utilities/utilities";
-import { getSingleVideo } from '../../utilities/utilities';
+import {getVideos, getSingleVideo, scrollToTop} from "../../utilities/utilities";
 import { useParams } from 'react-router-dom';
 
 function MainInfoContainer() {
@@ -15,6 +14,7 @@ function MainInfoContainer() {
     const {videoId} = useParams();
 
     useEffect(()=>{
+        scrollToTop();
         getVideos().then((response)=>{
             setVideos(response.data);
             const selectedVideoId = (videoId || response.data[0].id);

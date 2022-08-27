@@ -18,3 +18,10 @@ export function getVideos () {
 export function getSingleVideo (videoId) {
     return axios.get(`${BASE_URL}/videos/${videoId}?${API_KEY}`)
 }
+
+export function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
