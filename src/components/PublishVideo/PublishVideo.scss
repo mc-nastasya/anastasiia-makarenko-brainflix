@@ -121,6 +121,10 @@
         background-color: $background;
         color: $primary-cta;
         margin: 1.5rem 0 0.5rem;
+
+        &:hover{
+            color: $form-background;
+        }
     }
 
     &__cancel-button, &__publish-button {
