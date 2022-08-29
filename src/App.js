@@ -1,9 +1,10 @@
 import './App.scss';
-import Header from './components/Header/Header';
+import PageHeader from './components/PageHeader/PageHeader';
 import MainInfoContainer from './components/MainInfoContainer/MainInfoContainer';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
-import PublishVideo from './components/PublishVideo/PublishVideo';
+import PublishVideo from './pages/PublishVideo/PublishVideo';
 import {useState} from 'react';
+import NotFound from './pages/NotFound/NotFound';
 
 
 function App() {
@@ -12,11 +13,12 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      <PageHeader />
       <Routes>
         <Route path="/" element={<MainInfoContainer  setIsSubmitted = {setIsSubmitted} isSubmitted={isSubmitted} />}/>
-        <Route path='/videos/:videoId' element={<MainInfoContainer />} />
-        <Route path="/upload" element ={<PublishVideo setIsSubmitted = {setIsSubmitted} isSubmitted={isSubmitted} />}/>
+        <Route path='/videos/:videoId' element={<MainInfoContainer setIsSubmitted = {setIsSubmitted} isSubmitted={isSubmitted}/>} />
+        <Route path="/upload" element ={<PublishVideo setIsSubmitted = {setIsSubmitted} />}/>
+        <Route path='/*' element={<NotFound />}/>
       </Routes>
     </BrowserRouter>
   );

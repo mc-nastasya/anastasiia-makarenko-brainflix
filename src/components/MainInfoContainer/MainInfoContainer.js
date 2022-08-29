@@ -5,13 +5,14 @@ import CommentsSection from '../CommentsSection/CommentsSection';
 import VideoList from '../VideoList/VideoList';
 import "./MainInfoContainer.scss";
 import {getVideos, getSingleVideo, scrollToTop} from "../../utilities/utilities";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import FormSubmitted from '../FormSubmitted/FormSubmitted';
 
 
 function MainInfoContainer({isSubmitted, setIsSubmitted}) {
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [videos, setVideos]  = useState([]);
+    const navigate = useNavigate();
 
     const {videoId} = useParams();
 
@@ -23,14 +24,14 @@ function MainInfoContainer({isSubmitted, setIsSubmitted}) {
         }).then((response)=>{
             setSelectedVideo(response.data);
             scrollToTop();
-        }).catch((error)=>{
-            console.log("error", error)
+        }).catch(()=>{
+            navigate('/*');
         })
     }, [videoId]);
 
 
     if(!selectedVideo) {
-        return <p>...Loadiing</p>
+        return <p className='content__loading'>...Loadiing</p>
     }
 
     const nonSelectedVideos = videos.filter((video)=>{

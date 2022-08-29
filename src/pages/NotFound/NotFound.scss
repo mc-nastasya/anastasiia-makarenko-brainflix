@@ -1,0 +1,10 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/sizes" as *;
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 0 1rem;
+}

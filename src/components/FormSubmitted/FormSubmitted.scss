@@ -8,8 +8,6 @@
     align-items: center;
     background-color: $form-background;
     border-top: 0.0625rem solid $divider-and-outline;
-    z-index: 1;
-    position: absolute;
     width: 100%;
 
 
@@ -31,6 +29,10 @@
         height: 1.5rem;
         width: 4rem;
         font-size: 0.75rem;
+
+        &:hover {
+            background-color: $primary-text;
+        }
     }
 
 }

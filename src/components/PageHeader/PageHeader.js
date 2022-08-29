@@ -1,9 +1,9 @@
-import "./Header.scss";
+import "./PageHeader.scss";
 import BrainFlixLogo from "../../assets/icons/BrainFlix-logo.svg" 
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
 import { Link } from "react-router-dom";
 
-function Header() {
+function PageHeader() {
     return (
         <header className="header">
             <Link to="/"><img className="header__logo" src={BrainFlixLogo} alt="BrainFlix Logo"/></Link>
@@ -20,4 +20,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default PageHeader;

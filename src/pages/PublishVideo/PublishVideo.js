@@ -1,10 +1,10 @@
 import "./PublishVideo.scss";
 import VideoThumbnail from "../../assets/Images/Upload-video-preview.jpg";
-import ButtonComponent from "../ButtonComponent/ButtonComponent";
+import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
 import { Link, useNavigate } from "react-router-dom";
 
 
-function PublishVideo({isSubmitted, setIsSubmitted}) {
+function PublishVideo({setIsSubmitted}) {
 
     const navigate = useNavigate();
 
