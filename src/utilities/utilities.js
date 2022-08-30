@@ -1,8 +1,5 @@
 import axios from "axios";
 
-const BASE_URL = "https://project-2-api.herokuapp.com";
-const API_KEY = "api_key=ec10a7de-e444-40d0-ae2a-1be90906ea69"
-
 export function formatDate(date) {
     const formattedDate = new Date(date);
     const year = formattedDate.getFullYear();
@@ -12,11 +9,11 @@ export function formatDate(date) {
 }
 
 export function getVideos () {
-    return axios.get(`${BASE_URL}/videos?${API_KEY}`)
+    return axios.get(`${process.env.REACT_APP_API_URL}/videos`)
 }
 
 export function getSingleVideo (videoId) {
-    return axios.get(`${BASE_URL}/videos/${videoId}?${API_KEY}`)
+    return axios.get(`${process.env.REACT_APP_API_URL}/videos/${videoId}`)
 }
 
 export function scrollToTop() {
