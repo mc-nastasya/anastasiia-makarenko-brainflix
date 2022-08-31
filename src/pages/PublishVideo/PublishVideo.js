@@ -2,6 +2,7 @@ import "./PublishVideo.scss";
 import VideoThumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 function PublishVideo({setIsSubmitted}) {
@@ -10,8 +11,17 @@ function PublishVideo({setIsSubmitted}) {
 
     const handleSubmit = (event) =>{
         event.preventDefault();
-        setIsSubmitted(true);
-        navigate('/');
+        axios.post(process.env.REACT_APP_API_URL + "/videos", {
+            title: event.target.title.value,
+            description: event.target.description.value
+        }).then(()=>{
+            setIsSubmitted(true);
+            event.target.title.value = "";
+            event.target.description.value = "";
+            navigate('/');
+        })
+
+        
     }
 
 
@@ -26,9 +36,9 @@ function PublishVideo({setIsSubmitted}) {
                 </div>
                 <div className="form__input-container">
                     <label className="form__label" htmlFor="video-title">Title your video</label>
-                    <textarea id="video-title" className="form__input-title" name="video-title" placeholder="Add a title to your video"></textarea>
+                    <textarea id="video-title" className="form__input-title" name="title" placeholder="Add a title to your video"></textarea>
                     <label className="form__label" htmlFor="video-description">Add a video description</label>
-                    <textarea id="video-description" className="form__input-description" name="video-description" placeholder="Add a description to your video"></textarea>
+                    <textarea id="video-description" className="form__input-description" name="description" placeholder="Add a description to your video"></textarea>
                 </div>
             </div>
             {<div className="form__bottom">
