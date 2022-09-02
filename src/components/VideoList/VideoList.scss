@@ -33,6 +33,7 @@
 
     &__image {
         width: 7rem;
+        min-width: 7rem;
         height: 4.5rem;
         object-fit: cover;
         border-radius: 4px;

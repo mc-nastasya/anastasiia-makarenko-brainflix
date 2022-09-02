@@ -11,6 +11,8 @@ function PublishVideo({setIsSubmitted}) {
 
     const handleSubmit = (event) =>{
         event.preventDefault();
+
+
         axios.post(process.env.REACT_APP_API_URL + "/videos", {
             title: event.target.title.value,
             description: event.target.description.value
@@ -20,7 +22,6 @@ function PublishVideo({setIsSubmitted}) {
             event.target.description.value = "";
             navigate('/');
         })
-
         
     }
 
