@@ -13,8 +13,6 @@ function PublishVideo({setIsSubmitted}) {
     const [titleValue, setTitleValue] = useState(false);
     const [descriptionValue, setDescriptionValue] = useState(false);
 
-
-
     const handleSubmit = (event) =>{
         event.preventDefault();
         setErrorMessage(false);
@@ -42,8 +40,9 @@ function PublishVideo({setIsSubmitted}) {
             event.target.title.value = "";
             event.target.description.value = "";
             navigate('/');
-        })
-        
+        }).catch((error)=>{
+            console.log(error);
+        })   
     }
 
 
