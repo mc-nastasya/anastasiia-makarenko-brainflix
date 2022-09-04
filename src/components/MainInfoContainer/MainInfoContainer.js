@@ -24,7 +24,8 @@ function MainInfoContainer({isSubmitted, setIsSubmitted}) {
         }).then((response)=>{
             setSelectedVideo(response.data);
             scrollToTop();
-        }).catch(()=>{
+        }).catch((error)=>{
+            console.log(error);
             navigate('/*');
         })
     }, [videoId]);
