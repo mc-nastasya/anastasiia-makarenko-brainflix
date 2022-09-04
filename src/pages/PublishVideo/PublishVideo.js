@@ -53,7 +53,7 @@ function PublishVideo({setIsSubmitted}) {
             <div className="form__top">
                 <div className="form__image-container">
                     <p className="form__image-title">Video thumbnail</p>
-                    <img className="form__image" src={VideoThumbnail} alt=""/>
+                    <img className="form__image" src={VideoThumbnail} alt="default for published video"/>
                 </div>
                 <div className="form__input-container">
                     <label className="form__label" htmlFor="video-title">Title your video</label>
